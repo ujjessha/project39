@@ -32,17 +32,17 @@ class Player {
         allPlayers = data.val();
       })
     }
-    getCarsAtEnd(){
-        var carsAtEndRef=database.ref("CarsAtEnd");
-        carsAtEndRef.on("value",(data)=>{
+    getplayerAtEnd(){
+        var playersAtEndRef=database.ref("playerAtEnd");
+        playersAtEndRef.on("value",(data)=>{
           this.rank=data.val();
         })
       }
-      static updateCarsAtEnd(rank){
+      static updatePlayerAtEnd(rank){
         console.log("ujjessha");
-        var carsUpdateRef= database.ref("/");
-        carsUpdateRef.update({
-          CarsAtEnd:rank
+        var playerUpdateRef= database.ref("/");
+        playerUpdateRef.update({
+          playerAtEnd:rank
           
         });
   }
